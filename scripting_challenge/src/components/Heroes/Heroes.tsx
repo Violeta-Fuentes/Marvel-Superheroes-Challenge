@@ -16,13 +16,13 @@ export function Heroes() {
         (state: RootStateOrAny) => state.allHeroes
     )
     const comics = useSelector(
-        (state: RootStateOrAny) => state.comics
+        (state: RootStateOrAny) => state.searchedComic
     )
     const series = useSelector(
-        (state: RootStateOrAny) => state.series
+        (state: RootStateOrAny) => state.searchedSerie
     )
     const stories = useSelector(
-        (state: RootStateOrAny) => state.stories
+        (state: RootStateOrAny) => state.searchedStorie
     )
     const dispatch = useDispatch();
 
@@ -43,10 +43,15 @@ export function Heroes() {
                 <SearchBar />
             </div>
             {heroes.map((h: any) => {
+                console.log('ID',h.id)
                 return(
-                    <Cards 
-                    image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
-                    name={h.name} /> 
+                    <div>
+                        <Cards 
+                            image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
+                            name={h.name}
+                            id = {h.id}
+                        /> 
+                    </div>
                 )
             })}
             {comics ? comics.map((c: any) => {

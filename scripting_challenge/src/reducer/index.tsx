@@ -15,6 +15,10 @@ const initialState = {
     comics: [],
     series: [],
     stories: [],
+    heroeDetail: [],
+    searchedComic: [],
+    searchedSerie: [],
+    searchedStorie: [],
 }
 
 export interface IAction {
@@ -50,7 +54,7 @@ export default function rootReducer(state = initialState, action: any) {
         case GET_HEROES_ID:
             return {
                 ...state,
-                allHeroes: action.payload
+                heroeDetail: action.payload
             }
         case SEARCH_HEROES_BY_NAME:
             return {
@@ -63,7 +67,7 @@ export default function rootReducer(state = initialState, action: any) {
         case SEARCH_HEROES_BY_COMICS:
             return {
                 ...state,
-                comics: state.comics.filter(
+                searchedComic: state.comics.filter(
                     (c: IAction) => 
                         c.title.toLowerCase() === action.payload
                 )
@@ -71,7 +75,7 @@ export default function rootReducer(state = initialState, action: any) {
         case SEARCH_HEROES_BY_SERIES:
             return {
                 ...state,
-                series: state.series.filter(
+                searchedSerie: state.series.filter(
                     (s: IAction) =>
                         s.title.toLocaleLowerCase() === action.payload
                 )
@@ -79,7 +83,7 @@ export default function rootReducer(state = initialState, action: any) {
         case SEARCH_HEROES_BY_STORIES:
             return {
                 ...state,
-                stories: state.stories.filter(
+                searchedStorie: state.stories.filter(
                     (st: IAction) =>
                         st.title.toLocaleLowerCase() === action.payload
                 )

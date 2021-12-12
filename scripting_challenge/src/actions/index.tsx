@@ -50,7 +50,7 @@ export function getStories() {
     };
 }
 
-export function getHeroesId(id: number) {
+export function getHeroesId(id: any) {
     return function(dispatch: Dispatch) {
         return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
             .then((response) => response.json())
