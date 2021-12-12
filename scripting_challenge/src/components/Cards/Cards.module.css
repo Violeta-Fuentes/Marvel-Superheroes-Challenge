@@ -1,0 +1,15 @@
+.img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+}
+
+.name {
+    color: #fff;
+    margin-top: -60px;
+    z-index: 10000;
+}
+   

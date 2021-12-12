@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getComics, getHeroes, getSeries, getStories } from '../../actions';
 import { Cards } from '../Cards/Cards';
 import { SearchBar } from '../SearchBar/SearchBar';
+import style from './Heroes.module.css';
 
 //https://gateway.marvel.com:443/v1/public/characters?apikey=1676295427dbc8bb0a4a0792b8caf113
 //key privada: b19d36e595e6121b34025ae46d06248a013453ba
@@ -42,18 +43,18 @@ export function Heroes() {
             <div>
                 <SearchBar />
             </div>
+            <div className={style.cards} >
             {heroes.map((h: any) => {
                 console.log('ID',h.id)
                 return(
-                    <div>
                         <Cards 
                             image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
                             name={h.name}
                             id = {h.id}
                         /> 
-                    </div>
                 )
             })}
+            </div>
             {comics ? comics.map((c: any) => {
                 return (
                     <div>

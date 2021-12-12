@@ -1,0 +1,8 @@
+.wrap {
+    background: rgba(0, 0, 0, 0.5) url(https://i.pinimg.com/originals/43/78/75/437875204986f3922c70a3aa75e517b2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    min-height: 100vh;
+    overflow: hidden;
+}
