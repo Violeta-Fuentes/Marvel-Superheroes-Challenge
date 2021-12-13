@@ -7,7 +7,10 @@ import {
     SEARCH_HEROES_BY_NAME,
     SEARCH_HEROES_BY_SERIES, 
     GET_STORIES,
-    SEARCH_HEROES_BY_STORIES
+    SEARCH_HEROES_BY_STORIES,
+    GET_HEROES_STORIES,
+    GET_HEROES_COMICS,
+    GET_HEROES_SERIES
 } from "../actions"
 
 const initialState = {
@@ -19,6 +22,9 @@ const initialState = {
     searchedComic: [],
     searchedSerie: [],
     searchedStorie: [],
+    heroeComics: [],
+    heroeSeries: [],
+    heroeStories: [],
 }
 
 export interface IAction {
@@ -55,6 +61,21 @@ export default function rootReducer(state = initialState, action: any) {
             return {
                 ...state,
                 heroeDetail: action.payload
+            }
+        case GET_HEROES_COMICS:
+            return {
+                ...state,
+                heroeComics: action.payload
+            }
+        case GET_HEROES_SERIES:
+            return {
+                ...state,
+                heroeSeries: action.payload
+            }
+        case GET_HEROES_STORIES:
+            return {
+                ...state,
+                heroeStories: action.payload
             }
         case SEARCH_HEROES_BY_NAME:
             return {

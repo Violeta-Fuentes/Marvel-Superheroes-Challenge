@@ -1,8 +1,10 @@
+import { Console } from 'console';
 import { useEffect } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { getHeroesId } from '../../actions';
-import style from './HeroeDetail.module.css';
+import arrow from '../../assets/flecha-con-garabatos.png';
+import { getComics, getHeroeComics, getHeroeSeries, getHeroesId, getHeroeStories, getSeries, getStories } from '../../actions';
+import style from './HeroeDetail.module.scss';
 
 export function HeroeDetail() {
     const dispatch = useDispatch();
@@ -10,56 +12,73 @@ export function HeroeDetail() {
     const heroeId = useSelector(
         (state: RootStateOrAny) => state.heroeDetail
     )
+    const heroeComics = useSelector(
+        (state: RootStateOrAny) => state.heroeComics
+    )
+    const heroeSeries = useSelector(
+        (state: RootStateOrAny) => state.heroeSeries
+    )
+    const heroeStories = useSelector(
+        (state: RootStateOrAny) => state.heroeStories
+    )
 
     const { id } = useParams();
 
         useEffect(() => {
             dispatch(getHeroesId(id));
+            dispatch(getHeroeComics(id));
+            dispatch(getHeroeSeries(id))
+            dispatch(getHeroeStories(id))
         }, []);
 
     return (
-        <div>
+        <div className={style.container}>
             {heroeId.map((hId: any) => {
                 return (
                     <div className={style.container}>
-                        <img className={style.imgBackground} src={`${hId.thumbnail.path}.${hId.thumbnail.extension}`} alt="" />
+                            <Link to='/heroes'><button className={style.b}>Back to heroes</button></Link>
                         <div className={style.infoContainer}>
-                            <div className={style.img}>
+                            <div className={style.imgContainer}>
+                                <h2 className={style.name}>{hId.name}</h2>
                                 <img className={style.img} src={`${hId.thumbnail.path}.${hId.thumbnail.extension}`} alt="" />
                             </div>
-                            <div className={style.cards}>
-                            <Link to='/heroes'><button>Back to heroes</button></Link>
-                                <div className={style.name}>
-                                    <h1>{hId.name}</h1>
-                                </div>
-                                <div className={style.info}>
-                                    {hId.comics.items.map((i: any) => {
-                                        return (
-                                            <div>
-                                                <p>{i.name},</p>
-                                            </div>
-                                        )})
-                                    }
-                                </div>
-                                <div className={style.info}>
-                                    {hId.series.items.map((s: any) => {
-                                        return (
-                                        <p>{s.name},</p>
-                                        )})
-                                    }
-                                </div>
-                                <div className={style.info}>
-                                    {hId.stories.items.map((st: any) => {
-                                        return (
-                                        <p>{st.name},</p>
-                                        )})
-                                    }
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                )
-            })}
+                    </div>       
+                )})}
+                <div>
+                <img className={style.arrow} src={arrow} alt="" />
+                <h5 className={style.scroll}>Scroll down!  ;)</h5>
+                <p data-aos="fade-left" data-aos-duration="1000" className={style.categories}>comics:</p>     
+                </div>
+                <div className={style.comics}>
+                    {heroeComics.map((i: any) => {
+                        return (
+                            <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                                <img className={style.itemsImage} src={`${i.thumbnail.path}.${i.thumbnail.extension}`} alt="" />
+                            </div>
+                        )
+                    })}
+                </div>
+                    <p data-aos="fade-up" data-aos-duration="1000" className={style.categories}>Series:</p>
+                <div className={style.comics}>
+                    {heroeSeries.map((s: any) => {
+                        return (
+                            <div>
+                                <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200" className={style.itemsImage} src={`${s.thumbnail.path}.${s.thumbnail.extension}`} alt="" />
+                            </div>
+                        )
+                    })}
+                </div>
+                    <p data-aos="fade-right" data-aos-duration="1000" className={style.categories}>Stories:</p>
+                <div className={style.stories}>
+                    {heroeStories.map((storie: any) => {
+                        return (
+                            <ul data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                                <li>{storie.title}</li>
+                            </ul>
+                        )
+                    })}
+                </div>
         </div>
     )
 }

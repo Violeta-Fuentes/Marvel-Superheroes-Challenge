@@ -9,6 +9,9 @@ export const SEARCH_HEROES_BY_NAME = "SEARCH_HEROES_BY_NAME";
 export const SEARCH_HEROES_BY_COMICS = "SEARCH_HEROES_BY_COMICS"; 
 export const SEARCH_HEROES_BY_SERIES = "SEARCH_HEROES_BY_SERIES"; 
 export const SEARCH_HEROES_BY_STORIES = "SEARCH_HEROES_BY_STORIES"; 
+export const GET_HEROES_COMICS = "GET_HEROES_COMICS";
+export const GET_HEROES_SERIES = "GET_HEROES_SERIES";
+export const GET_HEROES_STORIES = "GET_HEROES_STORIES";
 
 export function getHeroes() {
     return function(dispatch: Dispatch) {
@@ -56,6 +59,34 @@ export function getHeroesId(id: any) {
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES_ID, payload: json.data.results });
+            });
+    };
+}
+
+export function getHeroeComics(id: any) {
+    return function(dispatch: Dispatch) {
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+            .then((response) => response.json())
+            .then((json) => {
+                dispatch({ type: GET_HEROES_COMICS, payload: json.data.results });
+            });
+    };
+}
+export function getHeroeSeries(id: any) {
+    return function(dispatch: Dispatch) {
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/series?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+            .then((response) => response.json())
+            .then((json) => {
+                dispatch({ type: GET_HEROES_SERIES, payload: json.data.results });
+            });
+    };
+}
+export function getHeroeStories(id: any) {
+    return function(dispatch: Dispatch) {
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/stories?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+            .then((response) => response.json())
+            .then((json) => {
+                dispatch({ type: GET_HEROES_STORIES, payload: json.data.results });
             });
     };
 }
