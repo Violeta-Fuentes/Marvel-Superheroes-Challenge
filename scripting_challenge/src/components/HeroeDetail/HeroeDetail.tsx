@@ -1,24 +1,24 @@
 import { useEffect } from 'react';
-import { connect, RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { getHeroesId } from '../../actions';
 
 export function HeroeDetail() {
     const dispatch = useDispatch();
+
     const heroeId = useSelector(
         (state: RootStateOrAny) => state.heroeDetail
     )
+
     const { id } = useParams();
-    console.log('HEROE',heroeId)
-    console.log(id)
+
         useEffect(() => {
             dispatch(getHeroesId(id));
-            console.log(id)
-        }, [])
+        }, []);
+
     return (
         <div>
             {heroeId.map((hId: any) => {
-                console.log(hId.comics.items)
                 return (
                     <div>
                         <img src={`${hId.thumbnail.path}.${hId.thumbnail.extension}`} alt="" />

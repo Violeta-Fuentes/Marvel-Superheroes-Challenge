@@ -1,17 +1,10 @@
 import { useEffect } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getComics, getHeroes, getSeries, getStories } from '../../actions';
 import { Cards } from '../Cards/Cards';
 import { SearchBar } from '../SearchBar/SearchBar';
 import style from './Heroes.module.css';
 
-//https://gateway.marvel.com:443/v1/public/characters?apikey=1676295427dbc8bb0a4a0792b8caf113
-//key privada: b19d36e595e6121b34025ae46d06248a013453ba
-//key publica: 1676295427dbc8bb0a4a0792b8caf113
-//ts: 1b19d36e595e6121b34025ae46d06248a013453ba1676295427dbc8bb0a4a0792b8caf113
-
-//hash: edf03bfd34b34c733d864793a7410fb7
 export function Heroes() {
     const heroes = useSelector(
         (state: RootStateOrAny) => state.allHeroes
@@ -27,17 +20,13 @@ export function Heroes() {
     )
     const dispatch = useDispatch();
 
-    console.log('comics',comics)
-    console.log('heroes',heroes)
-    console.log('series',series)
-    console.log('stories',stories)
-
     useEffect(() => {
         dispatch(getHeroes());
         dispatch(getComics());
         dispatch(getSeries());
         dispatch(getStories());
-    }, [])
+    }, []);
+
     return(
         <div>
             <div>
@@ -45,7 +34,6 @@ export function Heroes() {
             </div>
             <div className={style.cards} >
             {heroes.map((h: any) => {
-                console.log('ID',h.id)
                 return(
                         <Cards 
                             image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
