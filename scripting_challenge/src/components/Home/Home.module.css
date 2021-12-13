@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: #fff;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -60,6 +59,7 @@
     font-weight: 100;
     margin-left: 40px;
     text-decoration: none;
+    color: #fff;
 }
 
 .content {
@@ -81,6 +81,7 @@
     line-height: 1.4em;
     font-weight: 600;
     word-spacing: 20px;
+    color: #fff;
 }
 
 .span {
@@ -93,6 +94,7 @@
     font-size: 15px;
     word-spacing: 5px;
     line-height: 25px;
+    color: #fff;
 }
 
 .button {

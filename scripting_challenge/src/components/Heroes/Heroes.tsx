@@ -26,14 +26,15 @@ export function Heroes() {
         dispatch(getSeries());
         dispatch(getStories());
     }, []);
-
+    
     return(
-        <div>
+        <div className={style.container}>
             <div>
                 <SearchBar />
             </div>
             <div className={style.cards} >
             {heroes.map((h: any) => {
+                console.log('ID',h.id)
                 return(
                         <Cards 
                             image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
@@ -48,6 +49,7 @@ export function Heroes() {
                     <div>
                         <img src={`${c.thumbnail.path}.${c.thumbnail.extension}`} />
                         <h1>{c.title}</h1>
+                        <p>{c.description}</p>
                     </div>
                 )
             }): null}

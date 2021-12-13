@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchHeroesByComics, searchHeroesByName, searchHeroesBySeries, searchHeroesByStories } from "../../actions";
 import style from './SearchBar.module.css';
+import lens from '../../assets/lupa.png';
 
 export function SearchBar() {
     const [input, setInput] = useState('');
@@ -22,10 +23,10 @@ export function SearchBar() {
                 <input type="text" 
                     onChange={(e) => setInput(e.target.value)}
                     value={input}
-                    placeholder="Search"
+                    placeholder="Search..."
                     id="searchbar"
                     className={style.input}/>
-                <button type="submit" onClick={handleSubmit}>Search</button>
+                <img className={style.lens} onClick={handleSubmit} src={lens} />
             </form>
         </div>
     )

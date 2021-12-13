@@ -1,0 +1,45 @@
+.img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+}
+
+.name {
+    color: #fff;
+    margin-top: -60px;
+    z-index: 10000;
+    font-size: 20px;
+}
+
+.container {
+    margin: 10px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.knowMore {
+    visibility: hidden;
+    color: #fff;
+    font-size: 15px;
+}
+
+.imageContainer:hover {
+    .name {
+        margin-top: -75px;
+        transition: 0.5s ease;
+    }
+
+    .knowMore {
+        visibility: visible;
+    }
+}
+
+.img:hover {
+    opacity: 1;
+}
+   
