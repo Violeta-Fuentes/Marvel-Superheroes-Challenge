@@ -8,8 +8,8 @@ export function Cards({image, name, id}: any){
         <div className={style.container} key = {id}>
              <Link to={`/heroeDetail/${id}`}>
                 <img className={style.img} src={image} />
-                <h1 className={style.name}>{name}</h1>
             </Link>
+            <h3 className={style.name}>{name}</h3>
         </div>
     )
 }

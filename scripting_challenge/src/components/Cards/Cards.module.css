@@ -3,7 +3,7 @@
     background-position: center;
     background-size: cover;
     width: 350px;
-    height: 500px;
+    height: 300px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
 }
 
@@ -11,5 +11,9 @@
     color: #fff;
     margin-top: -60px;
     z-index: 10000;
+}
+
+.container {
+    margin: 10px;
 }
    

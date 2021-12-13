@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getComics, getHeroes, getSeries, getStories, searchHeroesByComics, searchHeroesByName, searchHeroesBySeries, searchHeroesByStories } from "../../actions";
+import { searchHeroesByComics, searchHeroesByName, searchHeroesBySeries, searchHeroesByStories } from "../../actions";
+import style from './SearchBar.module.css';
 
 export function SearchBar() {
     const [input, setInput] = useState('');
@@ -17,12 +18,13 @@ export function SearchBar() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className={style.form} onSubmit={handleSubmit}>
                 <input type="text" 
                     onChange={(e) => setInput(e.target.value)}
                     value={input}
                     placeholder="Search"
-                    id="searchbar"/>
+                    id="searchbar"
+                    className={style.input}/>
                 <button type="submit" onClick={handleSubmit}>Search</button>
             </form>
         </div>
