@@ -8,7 +8,6 @@ export function Home() {
                 <a href="#"><img src={logo} alt="logo" className={style.logo} /></a>
                 <ul className={style.navigation}>
                     <li className={style.navigationItems}><a className={style.a} href="/heroes">Heroes</a></li>
-                    <li className={style.navigationItems}><a className={style.a} href="/favorites">Fvorites</a></li>
                 </ul>
             </header>
 
