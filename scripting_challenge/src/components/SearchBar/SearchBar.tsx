@@ -17,6 +17,11 @@ export function SearchBar() {
         setInput('');
     }
 
+    // function backToHeroes(e: any) {
+    //     e.preventDefault();
+    //     window.location.reload();
+    // }
+
     return (
         <div>
             <form className={style.form} onSubmit={handleSubmit}>
@@ -26,8 +31,10 @@ export function SearchBar() {
                     placeholder="Search..."
                     id="searchbar"
                     className={style.input}/>
-                {/* <img className={style.lens} onClick={handleSubmit} src={lens} /> */}
             </form>
+            {/* <div>
+                <button onClick={(e) => backToHeroes(e)}>Back to heroes</button>
+            </div> */}
         </div>
     )
 }

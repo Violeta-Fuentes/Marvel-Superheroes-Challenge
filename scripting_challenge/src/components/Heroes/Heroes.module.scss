@@ -1,0 +1,56 @@
+.cards {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    justify-content: space-evenly;
+}
+
+.container {
+    height: 100%;
+    background: rgb(249,215,81);
+    background: linear-gradient(0deg, rgba(249,215,81,1) 20%, rgba(255, 90, 0, 1) 100%);
+}
+
+.storieCard {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    margin-left: 60rem;
+    margin-top: 20px;
+    padding: 13px 40px;
+    background: #fff;
+    color: rgba(253,75,45,1);
+    font-weight: 600;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.visible:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.vHidden {
+    visibility: hidden;
+}
+
+.vVisible {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+/* background: rgb(255,0,0);
+background: radial-gradient(circle, rgba(255,0,0,1) 54%, rgba(145,0,0,1) 93%); */

@@ -19,6 +19,7 @@ const initialState = {
     series: [],
     stories: [],
     heroeDetail: [],
+    searchedHeroe: [],
     searchedComic: [],
     searchedSerie: [],
     searchedStorie: [],
@@ -80,7 +81,7 @@ export default function rootReducer(state = initialState, action: any) {
         case SEARCH_HEROES_BY_NAME:
             return {
                 ...state,
-                allHeroes: state.allHeroes.filter(
+                searchedHeroe: state.allHeroes.filter(
                     (heroe: IAction) => 
                     heroe.name.toLocaleLowerCase() === action.payload
                 )
