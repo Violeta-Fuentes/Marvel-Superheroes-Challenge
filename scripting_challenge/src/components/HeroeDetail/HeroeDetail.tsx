@@ -48,7 +48,7 @@ export function HeroeDetail() {
                 <div>
                 <img className={style.arrow} src={arrow} alt="" />
                 <h5 className={style.scroll}>Scroll down!  ;)</h5>
-                <p data-aos="fade-left" data-aos-duration="1000" className={style.categories}>comics:</p>     
+                <p data-aos="fade-left" data-aos-duration="1000" className={style.comicsHeader}>comics</p>     
                 </div>
                 <div className={style.comics}>
                     {heroeComics.map((i: any) => {
@@ -59,7 +59,7 @@ export function HeroeDetail() {
                         )
                     })}
                 </div>
-                    <p data-aos="fade-up" data-aos-duration="1000" className={style.categories}>Series:</p>
+                    <p data-aos="fade-up" data-aos-duration="1000" className={style.seriesHeader}>Series</p>
                 <div className={style.comics}>
                     {heroeSeries.map((s: any) => {
                         return (
@@ -69,7 +69,8 @@ export function HeroeDetail() {
                         )
                     })}
                 </div>
-                    <p data-aos="fade-right" data-aos-duration="1000" className={style.categories}>Stories:</p>
+                <div className={style.storiesContainer}>
+                    <p data-aos="fade-right" data-aos-duration="1000" className={style.storiesHeader}>Stories</p>
                 <div className={style.stories}>
                     {heroeStories.map((storie: any) => {
                         return (
@@ -78,6 +79,7 @@ export function HeroeDetail() {
                             </ul>
                         )
                     })}
+                </div>
                 </div>
         </div>
     )

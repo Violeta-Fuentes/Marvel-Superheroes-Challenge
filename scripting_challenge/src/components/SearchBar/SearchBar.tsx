@@ -26,7 +26,7 @@ export function SearchBar() {
                     placeholder="Search..."
                     id="searchbar"
                     className={style.input}/>
-                <img className={style.lens} onClick={handleSubmit} src={lens} />
+                {/* <img className={style.lens} onClick={handleSubmit} src={lens} /> */}
             </form>
         </div>
     )

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { getComics, getHeroes, getSeries, getStories } from '../../actions';
 import { Cards } from '../Cards/Cards';
+import { CategoriesCards } from '../CategoriesCards/CategoriesCards';
 import { SearchBar } from '../SearchBar/SearchBar';
 import style from './Heroes.module.css';
 
@@ -29,42 +30,48 @@ export function Heroes() {
     
     return(
         <div className={style.container}>
-            <div>
+            <div data-aos="fade-left" data-aos-duration="1000">
                 <SearchBar />
             </div>
-            <div className={style.cards} >
+            <div data-aos="fade-right" data-aos-duration="1000" className={style.cards} >
             {heroes.map((h: any) => {
-                console.log('ID',h.id)
                 return(
+                    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
                         <Cards 
                             image={`${h.thumbnail.path}.${h.thumbnail.extension}`}
                             name={h.name}
                             id = {h.id}
                         /> 
+                    </div>
                 )
             })}
             </div>
             {comics ? comics.map((c: any) => {
                 return (
                     <div>
-                        <img src={`${c.thumbnail.path}.${c.thumbnail.extension}`} />
-                        <h1>{c.title}</h1>
-                        <p>{c.description}</p>
+                        <CategoriesCards
+                        img= {`${c.thumbnail.path}.${c.thumbnail.extension}`}
+                        title={c.title}
+                        description={c.description}/>
                     </div>
                 )
             }): null}
             {series ? series.map((s: any) => {
                 return (
                     <div>
-                        <img src={`${s.thumbnail.path}.${s.thumbnail.extension}`} />
-                        <h1>{s.title}</h1>
+                        <CategoriesCards
+                        img= {`${s.thumbnail.path}.${s.thumbnail.extension}`}
+                        title={s.title}
+                        />
                     </div>
                 )
             }): null}
             {stories ? stories.map((st: any) => {
                 return (
-                    <div>
-                        <h1>{st.title}</h1>
+                    <div className={style.storieCard}>
+                        <CategoriesCards
+                        title={st.title}
+                        />
                     </div>
                 )
             }): null}

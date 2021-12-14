@@ -1,4 +1,5 @@
 .cards {
+    margin-top: 8rem;
     display: flex;
     flex-wrap: wrap;
     margin-left: 30px;
@@ -6,5 +7,14 @@
 }
 
 .container {
-    background: #fff;
+    height: 100%;
+    background: rgb(249,215,81);
+    background: linear-gradient(0deg, rgba(249,215,81,1) 20%, rgba(255, 90, 0, 1) 100%);
 }
+
+.storieCard {
+    height: 100vh;
+}
+
+/* background: rgb(255,0,0);
+background: radial-gradient(circle, rgba(255,0,0,1) 54%, rgba(145,0,0,1) 93%); */

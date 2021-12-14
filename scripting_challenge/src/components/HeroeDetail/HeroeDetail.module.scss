@@ -1,6 +1,8 @@
 .container {
-    background: rgb(241,173,77);
-    background: linear-gradient(0deg, rgba(241,173,77,1) 0%, rgba(253,75,45,1) 100%);
+    background: rgb(249,215,81);
+    background: linear-gradient(0deg, rgba(249,215,81,1) 20%, rgba(251, 130, 10, 1) 100%);
+    // background: rgb(241,173,77);
+    // background: linear-gradient(0deg, rgba(241,173,77,1) 0%, rgba(243,165,60,1) 25%, rgba(248, 150,55,1) 50%, rgba(250,87,50,1), rgba(253,75,45,1) 100%);
 }
 
 .img {
@@ -39,14 +41,46 @@
 
 .stories {
     display: block;
+    color: #fff;
+    margin-left: -10rem;
+    margin-bottom: 3rem;
 }
 
-.categories {
-    font-size: 3rem;
+.storiesHeader {
+    margin-right: 20rem;
+    font-size: 5rem;
     text-transform: uppercase;
     font-weight: 900;
-    margin-top: 1rem;
+    margin-top: 3rem;
     color: #fff;
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+}
+
+.storiesContainer {
+    display: flex;
+    margin-left: 2rem;
+    justify-content: center;
+    margin-top: 15rem;
+}
+
+.comicsHeader {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: -3rem;
+    color: #fff;
+    margin-left: -45rem;
+}
+
+.seriesHeader {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 4rem;
+    color: #fff;
+    margin-left: 35rem;
+    margin-bottom: 3rem;
 }
 
 .arrow {
