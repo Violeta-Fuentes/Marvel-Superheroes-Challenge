@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchHeroesByComics, searchHeroesByName, searchHeroesBySeries, searchHeroesByStories } from "../../actions";
 import style from './SearchBar.module.css';
-import lens from '../../assets/lupa.png';
 
 export function SearchBar() {
     const [input, setInput] = useState('');
+    
     const dispatch = useDispatch();
 
     function handleSubmit(e: any) {
@@ -17,11 +17,6 @@ export function SearchBar() {
         setInput('');
     }
 
-    // function backToHeroes(e: any) {
-    //     e.preventDefault();
-    //     window.location.reload();
-    // }
-
     return (
         <div>
             <form className={style.form} onSubmit={handleSubmit}>
@@ -30,11 +25,9 @@ export function SearchBar() {
                     value={input}
                     placeholder="Search..."
                     id="searchbar"
-                    className={style.input}/>
+                    className={style.input}
+                />
             </form>
-            {/* <div>
-                <button onClick={(e) => backToHeroes(e)}>Back to heroes</button>
-            </div> */}
         </div>
     )
 }

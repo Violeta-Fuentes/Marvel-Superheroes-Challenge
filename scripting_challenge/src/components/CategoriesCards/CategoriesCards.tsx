@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import style from './CategoriesCards.module.scss';
 
 export function CategoriesCards({img, title, description}: any) {

@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getComics, getHeroes, getSeries, getStories } from '../../actions';
 import { Cards } from '../Cards/Cards';
 import { CategoriesCards } from '../CategoriesCards/CategoriesCards';
@@ -23,6 +22,7 @@ export function Heroes() {
     const stories = useSelector(
         (state: RootStateOrAny) => state.searchedStorie
     )
+
     const dispatch = useDispatch();
 
     
@@ -36,15 +36,12 @@ export function Heroes() {
         dispatch(getComics());
         dispatch(getSeries());
         dispatch(getStories());
-        const storedHeroes = localStorage.getItem('state');
-        // console.log('STORED',storedHeroes)
     }, []);
     
     return(
         <div className={style.container}>
             <div data-aos="fade-left" data-aos-duration="1000">
                 <SearchBar />
-                {/* <Link to='/favorites'><button className={style.a}>Favorites</button></Link> */}
             </div>
             <button onClick={(e) => backToHeroes(e)} className={searchedHeroes <= 1 && comics <= 1 && stories <= 1 && series <= 1 ? style.hidden : style.visible} >back to heroes</button>
             <div data-aos="fade-right" data-aos-duration="1000" className={style.cards} >
@@ -61,38 +58,38 @@ export function Heroes() {
             }): null}
             </div>
             <div className={searchedHeroes <= 1 && comics <= 1 && stories <= 1 && series <= 1 ? style.vHidden : style.vVisible}>
-{searchedHeroes ? searchedHeroes.map((c: any) => {
-    return (
-            <Cards 
-                image={`${c.thumbnail.path}.${c.thumbnail.extension}`}
-                name={c.name}
-                id = {c.id}
-            />
-    )
-}): null}
-{comics ? comics.map((c: any) => {
-    return (
-            <CategoriesCards
-            img= {`${c.thumbnail.path}.${c.thumbnail.extension}`}
-            title={c.title}
-            description={c.description}/>
-    )
-}): null}
-{series ? series.map((s: any) => {
-    return (
-            <CategoriesCards
-            img= {`${s.thumbnail.path}.${s.thumbnail.extension}`}
-            title={s.title}
-            />
-    )
-}): null}
-{stories ? stories.map((st: any) => {
-    return (
-            <CategoriesCards
-            title={st.title}
-            />
-    )
-}): null}
+                {searchedHeroes ? searchedHeroes.map((c: any) => {
+                    return (
+                            <Cards 
+                                image={`${c.thumbnail.path}.${c.thumbnail.extension}`}
+                                name={c.name}
+                                id = {c.id}
+                            />
+                    )
+                }): null}
+                {comics ? comics.map((c: any) => {
+                    return (
+                            <CategoriesCards
+                            img= {`${c.thumbnail.path}.${c.thumbnail.extension}`}
+                            title={c.title}
+                            description={c.description}/>
+                    )
+                }): null}
+                {series ? series.map((s: any) => {
+                    return (
+                            <CategoriesCards
+                            img= {`${s.thumbnail.path}.${s.thumbnail.extension}`}
+                            title={s.title}
+                            />
+                    )
+                }): null}
+                {stories ? stories.map((st: any) => {
+                    return (
+                            <CategoriesCards
+                            title={st.title}
+                            />
+                    )
+                }): null}
             </div>
         </div>
     )

@@ -4,7 +4,6 @@ export const GET_HEROES = "GET_HEROES";
 export const GET_COMICS = "GET_COMICS";
 export const GET_SERIES = "GET_SERIES";
 export const GET_STORIES = "GET_STORIES";
-export const GET_FAVORITES = "GET_FAVORITES";
 export const GET_HEROES_ID = "GET_HEROES_ID";
 export const SEARCH_HEROES_BY_NAME = "SEARCH_HEROES_BY_NAME"; 
 export const SEARCH_HEROES_BY_COMICS = "SEARCH_HEROES_BY_COMICS"; 
@@ -116,13 +115,6 @@ export function searchHeroesBySeries(payload: string) {
 export function searchHeroesByStories(payload: string) {
     return {
         type: SEARCH_HEROES_BY_STORIES,
-        payload
-    }
-}
-
-export function getFavorites(payload: any) {
-    return {
-        type: GET_FAVORITES,
         payload
     }
 }
