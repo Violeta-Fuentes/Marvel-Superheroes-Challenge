@@ -10,7 +10,8 @@ import {
     SEARCH_HEROES_BY_STORIES,
     GET_HEROES_STORIES,
     GET_HEROES_COMICS,
-    GET_HEROES_SERIES
+    GET_HEROES_SERIES,
+    GET_FAVORITES
 } from "../actions"
 
 const initialState = {
@@ -26,6 +27,7 @@ const initialState = {
     heroeComics: [],
     heroeSeries: [],
     heroeStories: [],
+    favorites: [],
 }
 
 export interface IAction {
@@ -109,6 +111,12 @@ export default function rootReducer(state = initialState, action: any) {
                     (st: IAction) =>
                         st.title.toLocaleLowerCase() === action.payload
                 )
+            }
+        case GET_FAVORITES:
+            console.log('payload',action.payload)
+            return {
+                ...state,
+                favorites : [...state.favorites, action.payload]
             }
         default:
             return state;

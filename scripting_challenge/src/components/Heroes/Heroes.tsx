@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getComics, getHeroes, getSeries, getStories } from '../../actions';
 import { Cards } from '../Cards/Cards';
 import { CategoriesCards } from '../CategoriesCards/CategoriesCards';
@@ -35,12 +36,15 @@ export function Heroes() {
         dispatch(getComics());
         dispatch(getSeries());
         dispatch(getStories());
+        const storedHeroes = localStorage.getItem('state');
+        // console.log('STORED',storedHeroes)
     }, []);
     
     return(
         <div className={style.container}>
             <div data-aos="fade-left" data-aos-duration="1000">
                 <SearchBar />
+                {/* <Link to='/favorites'><button className={style.a}>Favorites</button></Link> */}
             </div>
             <button onClick={(e) => backToHeroes(e)} className={searchedHeroes <= 1 && comics <= 1 && stories <= 1 && series <= 1 ? style.hidden : style.visible} >back to heroes</button>
             <div data-aos="fade-right" data-aos-duration="1000" className={style.cards} >
