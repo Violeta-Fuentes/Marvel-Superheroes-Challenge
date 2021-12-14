@@ -35,7 +35,7 @@ export function HeroeDetail() {
         <div className={style.container}>
             {heroeId.map((hId: any) => {
                 return (
-                    <div className={style.container}>
+                    <div className={style.header}>
                             <Link to='/heroes'><button className={style.b}>Back to heroes</button></Link>
                         <div className={style.infoContainer}>
                             <div className={style.imgContainer}>
@@ -73,7 +73,7 @@ export function HeroeDetail() {
                 <div className={style.stories}>
                     {heroeStories.map((storie: any) => {
                         return (
-                            <ul data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                            <ul data-aos="fade-down" data-aos-duration="1500" data-aos-delay="200">
                                 <li>{storie.title}</li>
                             </ul>
                         )
