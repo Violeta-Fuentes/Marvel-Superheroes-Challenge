@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Marvel-Superheroes-Challenge/static/css/main.e8d5159f.chunk.css",
+    "main.js": "/Marvel-Superheroes-Challenge/static/js/main.a1ba5e3e.chunk.js",
+    "main.js.map": "/Marvel-Superheroes-Challenge/static/js/main.a1ba5e3e.chunk.js.map",
+    "runtime-main.js": "/Marvel-Superheroes-Challenge/static/js/runtime-main.f122a280.js",
+    "runtime-main.js.map": "/Marvel-Superheroes-Challenge/static/js/runtime-main.f122a280.js.map",
+    "static/js/2.a27b8762.chunk.js": "/Marvel-Superheroes-Challenge/static/js/2.a27b8762.chunk.js",
+    "static/js/2.a27b8762.chunk.js.map": "/Marvel-Superheroes-Challenge/static/js/2.a27b8762.chunk.js.map",
+    "index.html": "/Marvel-Superheroes-Challenge/index.html",
+    "static/css/main.e8d5159f.chunk.css.map": "/Marvel-Superheroes-Challenge/static/css/main.e8d5159f.chunk.css.map",
+    "static/js/2.a27b8762.chunk.js.LICENSE.txt": "/Marvel-Superheroes-Challenge/static/js/2.a27b8762.chunk.js.LICENSE.txt",
+    "static/media/Marvel-Logo-PNG.9b6663e1.png": "/Marvel-Superheroes-Challenge/static/media/Marvel-Logo-PNG.9b6663e1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f122a280.js",
+    "static/js/2.a27b8762.chunk.js",
+    "static/css/main.e8d5159f.chunk.css",
+    "static/js/main.a1ba5e3e.chunk.js"
+  ]
+}
