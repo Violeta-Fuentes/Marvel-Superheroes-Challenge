@@ -45,7 +45,7 @@ export function HeroeDetail() {
                     </div>       
                 )
             })}
-            <div>
+            <div className={style.comicsContainer}>
                 <img className={style.arrow} src={arrow} alt="" />
                 <h5 className={style.scroll}>Scroll down!  ;)</h5>
                 <p data-aos="fade-left" data-aos-duration="1000" className={style.comicsHeader}>comics</p>     

@@ -37,6 +37,10 @@
     justify-content: space-evenly;
 }
 
+.comicsContainer {
+    margin-left: 70rem;
+}
+
 .stories {
     display: block;
     color: #fff;
@@ -88,14 +92,14 @@
 }
 
 .scroll {
-    margin-left: 40rem;
+    margin-left: 30rem;
     font-size: 1.5rem;
     font-weight: 100;
     color: #fff;
 }
 
 .b {
-    margin-left: 60rem;
+    margin-left: 120rem;
     margin-top: 20px;
     padding: 13px 40px;
     background: #fff;
@@ -109,4 +113,253 @@
 .b:hover {
     background: transparent;
     color: #fff;
+}
+
+@media (max-width: 2159px) {
+    .b {
+        margin-left: 110rem;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1979px) {
+    .b {
+        margin-left: 100rem;
+        margin-top: 20px;
+    }
+
+    .seriesHeader {
+        margin-left: 80rem;
+    }
+}
+
+@media (max-width: 1979px) {
+    .arrow {
+        margin-left: 15rem;
+    }
+
+    .scroll {
+        margin-left: 20rem;
+    }
+
+    .comicsHeader {
+        margin-left: -55rem;
+    }
+}
+
+@media (max-width: 1794px) {
+    .b {
+        margin-left: 90rem;
+    }
+}
+
+@media (max-width: 1794px) {
+    .b {
+        margin-left: 80rem;
+    }
+
+    .arrow {
+        margin-left: 5rem;
+    }
+
+    .scroll {
+        margin-left: 10rem;
+    }
+
+    .comicsHeader {
+        margin-left: -65rem;
+    }
+     .seriesHeader {
+         margin-left: 65rem;
+     }
+}
+
+@media (max-width: 1490px) {
+    .b {
+        margin-left: 70rem;
+    }
+
+    .arrow {
+        margin-left: -10rem;
+    }
+
+    .scroll {
+        margin-left: -5rem;
+    }
+
+    .comicsHeader {
+        margin-left: -65rem;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 1327px) {
+    .b {
+        margin-left: 60rem;
+    }
+
+    .arrow {
+        margin-left: -20rem;
+    }
+
+    .scroll {
+        margin-left: -15rem;
+    }
+
+    .seriesHeader {
+        margin-left: 55rem;
+    }
+}
+
+@media (max-width: 1151px) {
+    .b {
+        margin-left: 50rem;
+    }
+
+    .seriesHeader {
+        margin-left: 45rem;
+    }
+}
+
+@media (max-width: 1070px) {
+    .arrow {
+        margin-left: -30rem;
+    }
+
+    .scroll {
+        margin-left: -25rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .b {
+        margin-left: 45rem;
+    }
+
+    .seriesHeader {
+        margin-left: 35rem;
+    }
+}
+
+@media (max-width: 925px) {
+    .b {
+        margin-left: 40rem;
+    }
+
+    .arrow {
+        margin-left: -35rem;
+    }
+
+    .scroll {
+        margin-left: -30rem;
+    }
+}
+
+@media (max-width: 857px) {
+    .storiesHeader {
+        margin-top: -5rem;
+        font-size: 4rem;
+    }
+
+    .stories {
+        margin-left: -15rem;
+        margin-bottom: 3rem;
+    }
+
+    .arrow {
+        margin-left: -40rem;
+    }
+
+    .scroll {
+        margin-left: -35rem;
+    }
+
+    .b {
+        margin-left: 2rem;
+    }
+
+    .seriesHeader {
+        margin-left: 25rem;
+    }
+}
+
+@media (max-width: 756px) {
+    .stories {
+        margin-left: -17rem;
+    }
+
+    .arrow {
+        margin-left: -60rem;
+    }
+
+    .scroll {
+        margin-left: -55rem;
+    }
+
+    .comicsHeader {
+        margin-left: -55rem;
+        margin-top: 7rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 653px) {
+    .comicsHeader {
+        margin-left: -58rem;
+    }
+
+    .seriesHeader {
+        margin-left: 15rem;
+    }
+}
+
+@media (max-width: 496px) {
+    .comicsHeader {
+        margin-left: -62rem;
+    }
+
+    .seriesHeader {
+        margin-left: 10rem;
+    }
+
+    .arrow {
+        margin-left: -65rem;
+    }
+
+    .scroll {
+        margin-left: -60rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .comicsHeader {
+        margin-left: -65rem;
+        font-size: 3rem;
+    }
+
+    .seriesHeader {
+        margin-left: 5rem;
+        font-size: 3rem;
+    }
+
+    .arrow {
+        margin-left: -65rem;
+    }
+
+    .scroll {
+        margin-left: -60rem;
+    }
+
+    .b {
+        margin-left: 5rem;
+    }
+
+    .storiesHeader {
+        font-size: 3rem;
+        margin-top: -12rem;
+    }
+
+    .stories {
+        margin-left: -30rem;
+    }
 }
