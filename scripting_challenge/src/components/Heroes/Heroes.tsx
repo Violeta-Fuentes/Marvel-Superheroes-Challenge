@@ -7,6 +7,7 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import style from './Heroes.module.scss';
 
 export function Heroes() {
+    
     const heroes = useSelector(
         (state: RootStateOrAny) => state.allHeroes
     )

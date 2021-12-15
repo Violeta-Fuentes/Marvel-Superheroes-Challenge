@@ -15,7 +15,7 @@ export const GET_HEROES_STORIES = "GET_HEROES_STORIES";
 
 export function getHeroes() {
     return function(dispatch: Dispatch) {
-        return fetch("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7")
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES, payload: json.data.results });
@@ -25,7 +25,7 @@ export function getHeroes() {
 
 export function getComics() {
     return function(dispatch: Dispatch) {
-        return fetch("https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7")
+        return fetch(`https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_COMICS, payload: json.data.results });
@@ -35,7 +35,7 @@ export function getComics() {
 
 export function getSeries() {
     return function(dispatch: Dispatch) {
-        return fetch("https://gateway.marvel.com:443/v1/public/series?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7")
+        return fetch(`https://gateway.marvel.com:443/v1/public/series?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_SERIES, payload: json.data.results });
@@ -45,7 +45,7 @@ export function getSeries() {
 
 export function getStories() {
     return function(dispatch: Dispatch) {
-        return fetch("https://gateway.marvel.com:443/v1/public/stories?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7")
+        return fetch(`https://gateway.marvel.com:443/v1/public/stories?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_STORIES, payload: json.data.results });
@@ -55,7 +55,7 @@ export function getStories() {
 
 export function getHeroesId(id: any) {
     return function(dispatch: Dispatch) {
-        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES_ID, payload: json.data.results });
@@ -65,7 +65,7 @@ export function getHeroesId(id: any) {
 
 export function getHeroeComics(id: any) {
     return function(dispatch: Dispatch) {
-        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES_COMICS, payload: json.data.results });
@@ -74,7 +74,7 @@ export function getHeroeComics(id: any) {
 }
 export function getHeroeSeries(id: any) {
     return function(dispatch: Dispatch) {
-        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/series?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/series?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES_SERIES, payload: json.data.results });
@@ -83,7 +83,7 @@ export function getHeroeSeries(id: any) {
 }
 export function getHeroeStories(id: any) {
     return function(dispatch: Dispatch) {
-        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/stories?ts=1&apikey=1676295427dbc8bb0a4a0792b8caf113&hash=edf03bfd34b34c733d864793a7410fb7`)
+        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}/stories?ts=1&apikey=${process.env.REACT_APP_api_key}&hash=${process.env.REACT_APP_hash_key}`)
             .then((response) => response.json())
             .then((json) => {
                 dispatch({ type: GET_HEROES_STORIES, payload: json.data.results });
