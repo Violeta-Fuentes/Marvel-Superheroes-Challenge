@@ -9,11 +9,13 @@ export function Cards({image, name, id}: any){
                 <Link to={`/heroeDetail/${id}`}>
                     <img className={style.img} src={image} />
                 </Link>
-                <div className={style.nameContainer}>
-                    <h3 className={style.name}>{name}</h3>
-                </div>
-                <div className={style.knowMore}>
-                    <p>Click to know more about them</p>
+                <div className={style.textContainer}>
+                    <div className={style.nameContainer}>
+                        <h3 className={style.name}>{name}</h3>
+                    </div>
+                    <div className={style.knowMore}>
+                        <p>Click to know more about them</p>
+                    </div>
                 </div>
             </div>
         </div>

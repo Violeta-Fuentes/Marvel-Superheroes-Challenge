@@ -9,11 +9,8 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
 }
 
-.heart {
-    height: 30px;
-    margin-bottom: -2rem;
-    font-weight: 900;
-    z-index: 10;
+.textContainer {
+    text-align: center;
 }
 
 .name {
@@ -32,6 +29,7 @@
     visibility: hidden;
     color: #fff;
     font-size: 15px;
+    margin-left: 2rem;
 }
 
 .imageContainer:hover {
