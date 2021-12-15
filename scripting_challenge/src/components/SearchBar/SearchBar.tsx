@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchHeroesByComics, searchHeroesByName, searchHeroesBySeries, searchHeroesByStories } from "../../actions";
-import style from './SearchBar.module.css';
+import style from './SearchBar.module.scss';
 
 export function SearchBar() {
     const [input, setInput] = useState('');
