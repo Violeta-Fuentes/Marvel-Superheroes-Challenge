@@ -16,7 +16,7 @@ export function Home() {
             <div className={style.content}>
                 <div className={style.textBox}>
                     <h2 className={style.h2}><span className={style.span}>Marvel</span> Superheroes</h2>
-                    <p className={style.p}>hola que tal despues veo q pongo aca</p>
+                    <p className={style.p}>Find out more about the marvel world, their characters, comics, stories and more!</p>
                     <a className={style.button} href='/heroes'>Know our heroes!</a>
                 </div>
             </div>
