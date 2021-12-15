@@ -25,8 +25,9 @@
 
 .visible {
     visibility: visible;
-    margin-left: 60rem;
+    margin-left: 93rem;
     margin-top: 20px;
+    margin-bottom: 3rem;
     padding: 13px 40px;
     background: #fff;
     color: rgba(253,75,45,1);
@@ -50,4 +51,35 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: 100vh;
+}
+
+@media (max-width: 1471px) {
+    .visible {
+        margin-left: 63rem;
+    }
+}
+
+@media (max-width: 1253px) {
+    .visible {
+        margin-left: 60rem;
+    }
+
+}
+
+@media (max-width: 1164px) {
+    .visible {
+        margin-left: 52rem;
+    }
+}
+
+@media (max-width: 1025px) {
+    .visible {
+        margin-left: 43rem;
+    }
+}
+
+@media (max-width: 878px) {
+    .visible {
+        margin-left: 5rem;
+    }
 }
